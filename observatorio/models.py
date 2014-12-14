@@ -1,22 +1,22 @@
 from django.db import models
 
 class comida_tweet(models.Model):
-	id_comida = models.IntegerField(default=0)
-	id_tweet = models.IntegerField(default=0)
+	id_comida = models.ForeignKey('comida')
+	id_tweet = models.ForeignKey('tweet')
 
 class ciudad (models.Model):
 	id_ciudad = models.IntegerField(default=0)
 	nombre = models.CharField(max_length=25)
-	id_pais = models.IntegerField(default=0)
+	id_pais = models.ForeignKey('pais')
 
 class comida (models.Model):
 	id_comida = models.IntegerField(default=0)
 	nombre = models.CharField(max_length=40)
-	id_tipo = models.IntegerField(default=0)
+	id_tipo = models.ForeignKey('tipo')
 
 class comida_local(models.Model):
-	id_comida = models.IntegerField(default=0)
-	id_local = models.IntegerField(default=0)
+	id_comida = models.ForeignKey('comida')
+	id_local = models.ForeignKey('local')
 	precio = models.IntegerField(default=0)
 
 
@@ -37,12 +37,12 @@ class tweet (models.Model):
 	id_tweet = models.IntegerField(default=0)
 	fecha = models.DateField('date published')
 	promocion = models.CharField(max_length=50)
-	id_ciudad = models.IntegerField(default=0)
-	id_cuenta = models.IntegerField(default=0)
+	id_ciudad = models.ForeignKey('ciudad')
+	id_cuenta = models.ForeignKey('twitero')
 
 class tweet_hashtag(models.Model):
-	id_tweet = models.IntegerField(default=0)
-	id_hashtag = models.IntegerField(default=0)
+	id_tweet = models.ForeignKey('tweet')
+	id_hashtag = models.ForeignKey('hashtag')
 
 class twitero(models.Model):
 	id_cuenta = models.IntegerField(default=0)
