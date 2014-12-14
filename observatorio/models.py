@@ -19,10 +19,6 @@ class comida_local(models.Model):
 	id_local = models.IntegerField(default=0)
 	precio = models.IntegerField(default=0)
 
-class hashtag(models.Model):
-	id_hashtag = models.IntegerField(default=0)
-	texto = models.CharField(max_lenght=40)
-
 
 class local(models.Model):
 	id_local = models.IntegerField(default=0)
@@ -39,7 +35,7 @@ class tipo(models.Model):
 
 class tweet (models.Model):
 	id_tweet = models.IntegerField(default=0)
-	fecha = models.TimeField(max_length=20)
+	fecha = models.DateField('date published')
 	promocion = models.CharField(max_length=50)
 	id_ciudad = models.IntegerField(default=0)
 	id_cuenta = models.IntegerField(default=0)
@@ -51,5 +47,10 @@ class tweet_hashtag(models.Model):
 class twitero(models.Model):
 	id_cuenta = models.IntegerField(default=0)
 	nombre = models.CharField(max_length=20)
+
+class hashtag(models.Model):
+	id_hashtag = models.IntegerField(default=0)
+	texto = models.CharField(max_length=40)
+
 
 
