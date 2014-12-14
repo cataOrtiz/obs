@@ -1,21 +1,54 @@
+{% load staticfiles %}
 <html>
 	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- nombre que lleva la pagina en la pestaña -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- nombre que lleva la pagina en la pestaña -->
     <title>Observatorio de Comida</title>
  
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/estilo.css" %}" rel="stylesheet">
+
+
+	<!-- barra de navegacion -->
+	<ul class="nav nav-pills">
+	<li role="presentation" class="active">
+		<a href="#">
+		<!-- dibujo casa -->
+		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		 	Principal
+		</a>
+	</li>
+	<li role="presentation">
+	  	<a href="#">
+	  	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		  	Consultas
+	  	</a>
+	</li>
+	<li role="presentation">
+		<a href="#">
+		<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+			About
+		</a>
+	</li>
+	</ul>
+	<!-- titulo -->
+	<h1>
+		<p class="text-center">Observatorio Nutricional</p>
+	</h1>
   	</head>
 	<body>
+		
+
 		<!-- <div class="relativa">
 			<div class="cuadrado"> --> 
-				<h1> Titulo </h1>
 				<p> El parrafo y la wea </p>
 				<p > No se me ocurre que escribir para el contenido de esta pagina web </p>
-			</div>
+			<!-- </div>
 		<!-- </div> -->
+		<button type="button" class="btn btn-primary btn-lg active">Primary button</button>
 	</body>
 </html>
