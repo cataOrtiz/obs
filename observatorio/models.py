@@ -6,7 +6,7 @@ class comida_tweet(models.Model):
 
 class ciudad (models.Model):
 	id_ciudad = models.IntegerField(default=0)
-	nombre = models.CharField(max_length=6)
+	nombre = models.CharField(max_length=25)
 	id_pais = models.IntegerField(default=0)
 
 class comida (models.Model):
