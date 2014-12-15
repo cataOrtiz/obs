@@ -24,24 +24,6 @@
 	    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 		  	Consultas
 		</a></li>
-		<!--
-	    <li class="dropdown">
-	    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-	    <ul class="dropdown-menu">
-	        <li><a href="#">Action</a></li>
-	        <li><a href="#">Another action</a></li>
-	        <li><a href="#">Something else here</a></li>
-	        <li class="divider"></li>
-	        <li class="dropdown-header">Dropdown header</li>
-	        <li><a href="#">Separated link</a></li>
-	        <li><a href="#">One more separated link</a></li>
-	    </ul>
-	    </li>
-	    </ul>
-	    <form class="navbar-form navbar-left">
-	    <input class="form-control col-lg-8" placeholder="Search" type="text">
-	    </form>
-	    -->
 	    <ul class="nav navbar-nav navbar-right">
 	    <li><a href="#">
 	    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
@@ -90,17 +72,14 @@
 
 			<div class="col-md-8">
 
-
-			<p> En la presente página se encuentra el observatorio nutricional respecto a 4 alimentos (de comida rápida) mayoritariamente consumidos por los chilenos, los cuales son:
+			<section>
+			<p> Actualmente tenemos registrados: </p>
 			<ul>
-			<li>Completo
-			<li>Papas Fritas
-			<li>Hamburguesa
-			<li>Sushi
+			{% for dato in tipo %}
+				<li>{{dato.tipo}}</li>
+			{% endfor %}
 			</ul>
-			</p>
-			<p > No se me ocurre que escribir para el contenido de esta pagina web </p>
-
+			</section>
 
 			</div>
 			<div class="col-md-2">
