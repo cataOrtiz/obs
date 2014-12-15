@@ -4,6 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="{% static "js/main.js" %}"></script>
+
 	<!-- nombre que lleva la pagina en la pestaña -->
     <title>Observatorio de Comida</title>
  
@@ -75,12 +77,42 @@
 			<section>
 			<p> Actualmente tenemos registrados: </p>
 			<ul>
+
 			{% for dato in tipo %}
+			<div class="radio">
+			<label>
+			<input type="radio" name="optionsRadios" id="optionsRadios{{forloop.counter}} " value="{{dato.tipo}}" checked>
+			    {{dato.tipo}}
+			</label>
+			</div>
+			<!--
 			<a href="#" class="btn btn-default">{{dato.tipo}}</a>
-	<!--			<li>{{dato.tipo}}</li>			-->
+				<li>{{dato.tipo}}</li>			-->
 			{% endfor %}
 			</ul>
 			</section>
+
+			<section>
+			<p> Por favor seleccione la ciudad de la cual desea saber: </p>
+			<ul>
+			{% for dato in ciudad %}
+			<div class="radio">
+			<label>
+			<input type="radio" name="optionsRadios2" id="optionsRadios2{{forloop.counter}} " value="{{dato.nombre}}" checked>
+			    {{dato.nombre}}
+			</label>
+			</div>
+			<!--
+			<a href="#" class="btn btn-default">{{dato.tipo}}</a>
+				<li>{{dato.tipo}}</li>			-->
+			{% endfor %}
+			</ul>
+			</section>
+
+			<a href="http://127.0.0.1:8000/observatorio/respuestas/" class="btn btn-default">Realizar Búsqueda</a>
+
+			<div id="contenedorTwit">bla</div>
+
 
 			</div>
 			<div class="col-md-2">
