@@ -7,6 +7,13 @@
 	<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
 	<script src="{% static "js/main.js" %}"></script>
 
+	<script>
+	    function ejemplo(){
+	        alert($("input[name='optionsRadios']:checked").val());
+	    }
+	</script>
+
+
 	<!-- nombre que lleva la pagina en la pestaña -->
     <title>Observatorio de Comida</title>
  
@@ -75,23 +82,21 @@
 
 			<div class="col-md-8">
 
-			<section>
+			<form name="formulario" id="formulario">
 			<p> Actualmente tenemos registrados: </p>
 			<ul>
 
 			{% for dato in tipo %}
 			<div class="radio">
 			<label>
-			<input type="radio" name="optionsRadios" id="optionsRadios{{forloop.counter}} " value="{{dato.tipo}}" checked>
+			<input input name="optionsRadios" type="radio" id="optionsRadios{{forloop.counter}} " value="{{dato.tipo}}" checked>
 			    {{dato.tipo}}
 			</label>
 			</div>
-			<!--
-			<a href="#" class="btn btn-default">{{dato.tipo}}</a>
-				<li>{{dato.tipo}}</li>			-->
+
 			{% endfor %}
 			</ul>
-			</section>
+			</form>
 
 			<section>
 			<p> Por favor seleccione la ciudad de la cual desea saber: </p>
@@ -110,7 +115,7 @@
 			</ul>
 			</section>
 
-			<a href="http://127.0.0.1:8000/observatorio/respuestas/" id="boton" class="btn btn-default">Realizar Búsqueda</a>
+			<input type="button" name="button" onclick="ejemplo()" id="button" value="Seleccionar" />
 
 			<div id="contenedorTwit">bla</div>
 

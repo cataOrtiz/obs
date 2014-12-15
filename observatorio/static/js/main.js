@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#boton").click(function () {	
-		alert($('input:radio[name=optionsRadios]:checked').val());
-		$("#formulario").submit();
+		var value = $('input:radio[name=optionsRadios]:checked').val();
+		//$("#formulario").submit();
 	});
 });
