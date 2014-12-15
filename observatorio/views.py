@@ -1,4 +1,4 @@
-from observatorio.models import tipo
+from observatorio.models import tipo, 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 

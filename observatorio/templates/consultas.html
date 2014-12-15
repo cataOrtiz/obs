@@ -76,7 +76,9 @@
 			<p> Actualmente tenemos registrados: </p>
 			<ul>
 			{% for dato in tipo %}
-				<li>{{dato.tipo}}</li>
+			<a href="#" class="btn btn-default">{{dato.tipo}}</a>
+	<!--			<li>{{dato.tipo}}</li>			-->
+				{% if dato.tipo  %}
 			{% endfor %}
 			</ul>
 			</section>
